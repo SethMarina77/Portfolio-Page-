@@ -1,0 +1,384 @@
+:root {
+  font-size:16px;
+  font-family: 'Open Sans';
+  --text-primary: #66fcf1;
+  --text-secondary: #66fcf1;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color:aliceblue;
+  background-color: #0b0c10; /*I wanna try making this a Linear gradient that looks decent*/
+  margin:0;
+  padding:0
+}
+
+body::-webkit-scrollbar {
+  width: -.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background:#1f2833;
+}
+
+body::-webkit-scrollbar-thumb {
+  background:#66fcf1;
+}
+
+main {
+  margin-left:5rem;
+  padding:none
+;
+  background-color: #23232e;
+  color:aliceblue
+}
+
+.navbar {
+  z-index: 100;
+  position:fixed;
+  background-color: var(--bg-primary);
+  transition: width 200ms ease;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+
+  
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background-color: #45a29e /*var(--bg-secondary)*/;
+  color: var(--text-secondary);
+  
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+
+.nav-link svg {
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+/*.navbar:hover {
+  width: 16rem;
+}*/
+
+/*.navbar:hover .link-text {
+  display:block;
+}*/
+
+.fa-primary {
+  color: #ff7eee;
+}
+
+.fa-secondary {
+  color: #df49a6;
+}
+
+.fa-primary,
+.fa-secondary {
+  transition: var(--transition-speed);
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  width: 100%;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  font-size: 1rem;
+  letter-spacing: 0.3ch;
+
+}
+
+.logo svg {
+  transform: rotate(0deg);
+  transition: transform 0.4s;
+}
+
+.navbar:hover .logo svg {
+  transform: rotate(-90deg);
+}
+
+/* YES FOR SMALLER SCREENS*/
+
+@media only screen and (max-width:600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+  .logo {
+    display: none;
+
+  }
+  .navbar-nav {
+    flex-direction: row;
+  }
+  .nav-link {
+    justify-content: center;
+  }
+  main {
+    margin: 0;
+  }
+
+}
+
+/* FOR LARGER SCREENS*/
+
+@media only screen and (min-width:600px) { 
+  .navbar{
+  width:5rem;
+  height:100vh;
+  top: 0;
+ }
+ .navbar:hover {
+  width: 16rem;;
+ }
+ .navbar:hover .link-text {
+  display:inline;
+  transition: opacity var(--transition-speed);
+}
+}
+
+/*main {
+  text-align: center;
+  background-color: rgb(180, 161, 160);
+  height: 47px;
+  margin: 0;
+} */
+
+.cardBox {
+  margin-top: rem;
+  
+  padding:1rem;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 100vw;
+  height: 350px;
+  overflow: hidden;
+  background: linear-gradient(-50deg, #66fcf1, #1f2833);
+}
+
+.cardBox::before {
+  content: "";
+  position:absolute;
+  width: 450px;
+  height: 35px;
+  top: 0;
+  right: 35px;
+  transition: 1.9s;
+  background: linear-gradient(50deg,#ff0000,#480bee9c);
+  transform: rotate(-45deg) translate(0,-100px);
+  
+
+}
+
+.card {
+  display:grid;
+  place-items: center;
+  width: 100vw;
+  height: 347px;
+  background: #0b0c10;
+  border-radius: .8em;
+  z-index: 1;
+  color: #858585;
+  overflow: hidden;
+  padding-top: 1em;
+  text-align: center;
+  cursor: pointer;
+  transition: .5s ease;
+ 
+  
+}
+
+.card:hover {
+  color:#fff;
+}
+
+.cardBox:hover::before {
+  animation: effect 1.9s;
+
+}
+
+@keyframes effect {
+  100% {
+    transform: rotate(-45deg) translate(0,450px);
+  }
+}
+/*.LittleBottomGap {
+  margin-bottom: 50px;
+} */ 
+
+.SectionSettings {
+  margin-left: 5rem;
+  padding-top: 50px;
+  justify-content: center;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  background-color: #23232e;
+  
+}
+
+.skills {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  justify-content: center;
+  padding-left: 20px;
+
+}
+
+.S1 {
+  text-align: center;
+  letter-spacing: 3px;
+  padding-right: 125px;
+  
+}
+
+.everyPicture {
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 95px;
+ margin-bottom: 100px;
+}
+
+#soBig {
+  width: 40vw;
+  border: 10px #66fcf1;
+}
+
+#soBig {
+  
+  width:40vw ;
+  height:500px;
+  margin-left: 560px;
+  border-radius: 10%;
+}
+#soBig:hover{
+  color: #111; 
+  background: #45a29e; 
+  box-shadow: 0 0 100px #66fcf1; 
+}
+
+.PROJECTBOARD {
+  width:40vw ;
+  height:500px;
+  margin-left: 560px;
+  border-radius: 10%;
+}
+
+.PROJECTBOARD:hover {
+  color: #111; 
+  background: #45a29e; 
+  box-shadow: 0 0 100px #66fcf1; 
+}
+
+.soloPIC {
+  display: block;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 20px;
+ margin-bottom: 20px;
+ width: auto;
+  border: 10px #66fcf1;
+  
+  height: 500px;
+}
+
+.soloPIC:hover{
+  color: #111; 
+  background: #45a29e; 
+  box-shadow: 0 0 100px #66fcf1; 
+}
+
+/*.formBox {
+  display: ;
+  text-align: center;
+  margin-top: 100px;
+  background-color: #1f2833;
+  height: 300px;
+} */
+#centerDiv{
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+#survey-form{
+margin-left:auto;  
+margin-right: auto;
+margin-bottom: 250px;
+margin-top: 250px;
+width: 400px;
+height: 300px;
+}
+
+.inputField {
+  margin-top: 50px;
+  background-color: #111;
+  color: #66fcf1;
+}
+
+form {
+  background-color: #23232e;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 130px;
+  border-radius: 2em;
+  text-align: center;
+}
+
+.glowyColor {
+  background-color: #111;
+  border-radius: 1em;
+  padding: .5rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.buttonBoi {
+  background-color: #66fcf1;
+  color: #111;
+  height: 50px;
+  width: 70px;
+  margin-top: 35px;
+}
