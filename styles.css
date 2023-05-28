@@ -9,6 +9,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden
 }
 
 body {
@@ -16,6 +17,7 @@ body {
   background-color: #0b0c10; /*I wanna try making this a Linear gradient that looks decent*/
   margin:0;
   padding:0
+  
 }
 
 body::-webkit-scrollbar {
@@ -157,7 +159,10 @@ main {
   main {
     margin: 0;
   }
-
+  
+  /*.everyPicture {
+    display: none;
+  } */
 }
 
 /* FOR LARGER SCREENS*/
@@ -381,4 +386,5 @@ form {
   height: 50px;
   width: 70px;
   margin-top: 35px;
+  cursor: pointer;
 }
